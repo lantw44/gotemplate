@@ -194,11 +194,11 @@ func (s *mySet) IsSuperset(strict bool, other *mySet) bool {
 	if strict && len(other.m) >= len(s.m) {
 		return false
 	}
-string:
+A:
 	for v := range other.m {
 		for i := range s.m {
 			if v == i {
-				continue string
+				continue A
 			}
 		}
 		return false
@@ -211,11 +211,11 @@ func (s *mySet) IsSubset(strict bool, other *mySet) bool {
 	if strict && len(s.m) >= len(other.m) {
 		return false
 	}
-string:
+A:
 	for v := range s.m {
 		for i := range other.m {
 			if v == i {
-				continue string
+				continue A
 			}
 		}
 		return false
